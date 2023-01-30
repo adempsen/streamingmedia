@@ -1,0 +1,458 @@
+/* -----CSS RESET------ */
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* --------------------------END CSS REST-------------------------  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------END CSS RESET-------------------- */
+
+html {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0 auto;   
+    background-color: #020659;
+}
+
+h1 {
+    font-size: 1.25em;
+    color:#ffffff;
+    text-transform: uppercase;
+    font-weight: bold;   
+}
+
+h2, h3 {
+    font-size: 1em;
+}
+
+p, dl, dd {
+    font-size: 1em;
+}
+
+footer p {
+    font-size: .75em;
+}
+.header {
+    width: 100%;
+    background-color: #030A8c;
+    height: 80px;
+    display: flex;
+    position: fixed;
+    z-index: 3;
+    align-items: center;
+    z-index: 200;
+  
+}
+#muzak {
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 1.5em;
+    position: fixed;
+    top: 5px;
+    left: 80px;
+    
+    
+}
+
+nav a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-top: 15px;
+    padding-left: 20px;
+
+    
+}
+  
+nav ul li {
+   padding: 3px;
+   
+}
+
+nav, ul, li, a {
+    background-color: #030A8c;
+   color: #ffff;
+}
+
+nav ul a {
+    width: 20px;
+    padding: 0 0 0px 8px;
+    text-align: center;
+    margin-left: -15px;
+}
+
+/* MENU STYLES */
+
+ul {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+ 
+ 
+ }
+ label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+   
+ }
+ label span {
+    background-color: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+    border-radius: 5px;
+ }
+ label span:before, label span:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+    border-radius: 5px;
+ }
+ label span:before {
+    top: 5px;
+ }
+ label span:after {
+    top: -5px;
+ }
+ input {
+    display: none;
+ }
+ input:checked ~ ul {
+    max-height: 500px;
+ }
+ input:checked ~ label span {
+    background: transparent;
+ }
+ input:checked ~ label span:before {
+    transform: rotate(-45deg);
+ }
+ input:checked ~ label span:after {
+    transform: rotate(45deg);
+ }
+ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+ }
+
+ @media screen and (min-width:834px) {
+    ul {
+        overflow: visible;
+        position: absolute;
+        top: 0;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    label span, input {
+        display: none;
+    }
+
+    #muzak {
+        position: initial;
+        font-size: 1em;
+
+    }
+ 
+
+}
+
+ /* MAIN */
+
+
+#hero-banner {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   flex-basis: 100%;
+   position: relative;
+   top: 80px;
+    background: linear-gradient(45deg, #030A8c, #0000);
+    color: #ffff;
+    padding-bottom: 15px;
+  
+   
+}
+
+
+
+#trending-banner {
+    background-color: #ffff;
+    display: flex;
+    height: 60px;
+    position: relative;
+    top: 80px;
+   
+}
+
+#trending-banner h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 20px;
+    padding-top: 25px;
+    color: #590242;
+}
+
+#trending-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+    position: relative;
+    overflow: scroll;
+    top: 80px;
+    background-color: #ffff;
+}
+
+#trending-container div {
+position: relative;
+top: 320px;
+background-color: gray;
+padding-bottom: 10px;
+padding-left: 5px;
+}
+
+#trending-container h3 {
+ font-weight: bold;
+    color: #590242;
+}
+#trending-container dl {
+    color:#590242;
+}
+
+.artist {
+    font-style: italic;
+}
+
+.audio {
+    align-self: center;
+    justify-self: center;
+    position: relative;
+    bottom: 150px;
+    z-index: 10;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+#more-trending {
+    display: flex;
+    width: 100%;
+    position: relative;
+    top: 25px;
+
+}
+
+#more-trending {
+    display: inline-flex;
+    width: 100%;
+    background-color: #ffff;
+    position: relative;
+    bottom: 5px;
+    height: 5px;
+    margin-top: 20px;
+
+}
+
+.button a {
+    text-decoration: none;
+    text-align: center;
+    color: #ffffff;
+    background-color: #590242;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 15px;
+
+}
+
+
+
+#playlists {
+    position: relative;
+    grid-column: 1/ 10; 
+     
+}
+
+#playlists-banner {
+    display: flex;
+    background-color: #ffffff;
+    width: 100%;
+    margin-top: 20px;
+    padding-left: 15px;
+    padding-bottom: 20px;
+}
+#playlists-banner h3 {
+    text-align: center;
+    padding-top: 20px;
+    color: #590242;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #ffff; 
+}
+
+#more-trending {
+    height: 50px;
+    text-align: center;
+    padding-top: 25px;
+}
+
+#playlists {
+    grid-column: 1 /span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 25px;
+    overflow: scroll;
+    height: fit-content;
+    justify-content: start;
+    background-color: #2104D9;
+   
+}
+#playlists a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+#pumpkin-section {
+    grid-column: 1;
+    padding-left:15px;
+}
+
+#playlists-button a {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    bottom: 5px;
+    color: white;
+    background-color: aquamarine;
+    height: fit-content;
+    
+}
+
+#pumpkin-section, #smooth-section, #quiet-section, #study-section {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 5px;
+    background-color: #0d8dfb;
+}
+#curated-banner {
+    grid-column: 1 /span 2;
+    width: 100%;
+    height: 25px;
+    background-color: #fff;
+    text-align: center;
+    color: #590242;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: left;
+    padding-top: 5px;
+}
+
+#curated {
+    grid-column: 1 /span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 25px;
+    overflow: scroll;
+    height:fit-content;
+    padding-bottom: 10px;
+    background-color: #2104D9;
+}
+#curated a {
+    color: #fff;
+    text-decoration: none;
+    background-color: #030A8c;
+}
+
+#curated-button a {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    bottom: 5px;
+    color: white;
+    height: fit-content; 
+}
+
+#boozy-section, #dinner-section, #mellow-section, #chill-section, #sax-section {
+    background-color: #030A8c;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+footer {
+    height: 60px;
+    background-color: #ffffff;
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* SCROLL */
+
+::-webkit-scrollbar {
+    width: 12px;
+    scrollbar-color: #590242;
+}
+ 
+::-webkit-scrollbar-track {
+    
+}
+ 
